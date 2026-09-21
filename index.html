@@ -1,1 +1,231 @@
-(arquivo grande enviado)
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dra. Camila Borges — Pele & Harmonização</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --noir:#0e0d0c;
+    --ivory:#f5f1ea;
+    --gold:#c9a876;
+    --gold-soft:#e4cfa8;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{height:100%}
+  body{
+    font-family:'Jost',sans-serif;
+    background:#080707;
+    color:var(--ivory);
+    min-height:100svh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow-x:hidden;
+  }
+
+  .stage{
+    position:relative;
+    width:100%;
+    max-width:460px;
+    min-height:100svh;
+    display:flex;
+    flex-direction:column;
+    background:var(--noir);
+    overflow:hidden;
+  }
+
+  .photo{
+    position:relative;
+    flex:0 0 auto;
+    height:52svh;
+    min-height:380px;
+    background:center 12%/cover no-repeat;
+    animation:reveal 1.6s cubic-bezier(.22,.8,.3,1) both;
+  }
+  @keyframes reveal{from{opacity:0;transform:scale(1.04)}to{opacity:1;transform:scale(1)}}
+
+  .photo::after{
+    content:'';
+    position:absolute;
+    left:0;right:0;bottom:-1px;
+    height:45%;
+    background:linear-gradient(to bottom, rgba(14,13,12,0), var(--noir) 92%);
+  }
+
+  .mono{
+    position:absolute;
+    top:22px;
+    left:50%;
+    transform:translateX(-50%);
+    width:58px;
+    z-index:3;
+    filter:drop-shadow(0 2px 10px rgba(0,0,0,.5));
+    animation:fadeDown 1.2s .5s ease both;
+  }
+  @keyframes fadeDown{from{opacity:0;transform:translate(-50%,-12px)}to{opacity:1;transform:translate(-50%,0)}}
+
+  .content{
+    position:relative;
+    z-index:2;
+    margin-top:-64px;
+    flex:1;
+    padding:0 28px calc(30px + env(safe-area-inset-bottom));
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .logo-h{
+    width:min(290px,70vw);
+    animation:fadeUp 1s .9s ease both;
+  }
+
+  .tag{
+    margin-top:10px;
+    font-size:11.5px;
+    letter-spacing:.34em;
+    text-transform:uppercase;
+    color:var(--gold-soft);
+    font-weight:400;
+    animation:fadeUp 1s 1.05s ease both;
+  }
+  .tag small{
+    display:block;
+    margin-top:6px;
+    letter-spacing:.22em;
+    font-size:10px;
+    color:rgba(245,241,234,.5);
+  }
+
+  .divider{
+    width:44px;height:1px;
+    background:linear-gradient(90deg,transparent,var(--gold),transparent);
+    margin:16px 0 20px;
+    animation:fadeUp 1s 1.15s ease both;
+  }
+
+  .btn{
+    width:100%;
+    max-width:340px;
+    padding:17px 24px;
+    border-radius:999px;
+    text-decoration:none;
+    font-family:'Jost',sans-serif;
+    font-size:13px;
+    font-weight:500;
+    letter-spacing:.26em;
+    text-transform:uppercase;
+    text-align:center;
+    transition:transform .35s cubic-bezier(.22,.8,.3,1), box-shadow .35s, background .35s;
+    position:relative;
+    overflow:hidden;
+  }
+  .btn:active{transform:scale(.97)}
+
+  .btn-gold{
+    background:linear-gradient(135deg,#d9bc8a,#b8935e);
+    color:#181410;
+    box-shadow:0 10px 32px rgba(201,168,118,.28);
+    animation:fadeUp 1s 1.3s ease both;
+  }
+  .btn-gold::before{
+    content:'';
+    position:absolute;top:0;left:-80%;
+    width:60%;height:100%;
+    background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);
+    transform:skewX(-20deg);
+    animation:shine 4.5s 2.2s ease-in-out infinite;
+  }
+  @keyframes shine{0%,60%{left:-80%}100%{left:140%}}
+  .btn-gold:hover{box-shadow:0 14px 40px rgba(201,168,118,.42);transform:translateY(-2px)}
+
+  .btn-ghost{
+    margin-top:14px;
+    color:var(--ivory);
+    border:1px solid rgba(245,241,234,.35);
+    background:rgba(255,255,255,.04);
+    backdrop-filter:blur(8px);
+    animation:fadeUp 1s 1.45s ease both;
+  }
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold-soft);transform:translateY(-2px)}
+
+  .btn span{
+    display:block;
+    font-size:10px;
+    letter-spacing:.16em;
+    text-transform:none;
+    font-weight:300;
+    margin-top:4px;
+    opacity:.72;
+  }
+
+  .footer{
+    margin-top:auto;
+    padding-top:26px;
+    font-size:10px;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    color:rgba(245,241,234,.38);
+    animation:fadeUp 1s 1.6s ease both;
+  }
+
+  @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+
+  @media(min-width:720px){
+    .stage{
+      min-height:auto;
+      height:min(880px,94vh);
+      border-radius:26px;
+      box-shadow:0 40px 120px rgba(0,0,0,.6), 0 0 0 1px rgba(201,168,118,.15);
+    }
+    .photo{height:48%}
+  }
+</style>
+</head>
+<body>
+  <main class="stage">
+    <div class="photo" id="photo">
+      <img class="mono" id="mono" alt="CB">
+    </div>
+
+    <div class="content">
+      <img class="logo-h" id="logoh" alt="Dra. Camila Borges">
+      <p class="tag">Pele &amp; Harmonização
+        <small>Pouso Alegre · MG</small>
+      </p>
+      <div class="divider"></div>
+
+      <a class="btn btn-gold" href="https://api.whatsapp.com/send/?phone=5535999792248&text=Ol%C3%A1!%20Quero%20agendar%20uma%20consulta%20com%20a%20Dra.%20Camila%20Borges.&type=phone_number&app_absent=0&utm_source=ig" target="_blank" rel="noopener">
+        Agendar Consulta
+        <span>Atendimento personalizado na clínica</span>
+      </a>
+
+      <a class="btn btn-ghost" href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Tenho%20interesse%20na%20mentoria%20da%20Dra.%20Camila%20Borges." target="_blank" rel="noopener">
+        Mentoria
+        <span>Para profissionais da harmonização</span>
+      </a>
+
+      <p class="footer">@dracamilaborgeshof</p>
+    </div>
+  </main>
+
+  <script>
+    async function loadAssets(){
+      const [foto, logoh, logom] = await Promise.all([
+        fetch('assets/foto.txt').then(r=>r.text()),
+        fetch('assets/logo-h.txt').then(r=>r.text()),
+        fetch('assets/logo-m.txt').then(r=>r.text()),
+      ]);
+      document.getElementById('photo').style.backgroundImage = `url('data:image/jpeg;base64,${foto.trim()}')`;
+      document.getElementById('logoh').src = `data:image/png;base64,${logoh.trim()}`;
+      document.getElementById('mono').src  = `data:image/png;base64,${logom.trim()}`;
+    }
+    loadAssets();
+  </script>
+</body>
+</html>
